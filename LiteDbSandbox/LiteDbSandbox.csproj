@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Analytics.cs" />
+    <Compile Include="Model\Document.cs" />
+    <Compile Include="Model\DocumentProcessingEvent.cs" />
+    <Compile Include="Model\EtiProcessingResult.cs" />
+    <Compile Include="Model\LiteDbMapping.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
