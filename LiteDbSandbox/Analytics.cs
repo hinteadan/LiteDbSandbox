@@ -73,7 +73,8 @@ namespace LiteDbSandbox
                 return db
                     .GetCollection<DocumentProcessingEvent>(collectionNameForDocProcessingEvents)
                     .Include(x => x.User)
-                    .Find(x => x.Document.ProcessResult.HasSucceeded == false);
+                    .FindAll();
+                //.Find(x => x.Document.ProcessResult.HasSucceeded == false);
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using LiteDbSandbox.Model;
+﻿using LiteDbSandbox.DataProvider;
+using LiteDbSandbox.Model;
 using System;
 using System.Linq;
 
@@ -12,19 +13,8 @@ namespace LiteDbSandbox
 
             var a =
             Analytics
-                .For(new User { Username = "hintee", Email = "h@hintee.ro" })
-                .Pin(new Document
-                {
-                    Name = "test.pdf",
-                    NumberOfPages = 13,
-                    SizeInBytes = 1000,
-                    ProcessResult = new EtiProcessingResult
-                    {
-                        Duration = TimeSpan.FromSeconds(12),
-                        HasSucceeded = true,
-                        NumberOfTablesFound = 3
-                    }
-                })
+                .For(Fake.User)
+                .Pin(Fake.Document)
                 .List()
                 .ToArray();
 
