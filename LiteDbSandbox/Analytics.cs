@@ -66,7 +66,7 @@ namespace LiteDbSandbox
             return this;
         }
 
-        public IEnumerable<DocumentProcessingEvent> List()
+        public static IEnumerable<DocumentProcessingEvent> All()
         {
             using (var db = new LiteDatabase(dbFile.FullName))
             {
@@ -74,7 +74,17 @@ namespace LiteDbSandbox
                     .GetCollection<DocumentProcessingEvent>(collectionNameForDocProcessingEvents)
                     .Include(x => x.User)
                     .FindAll();
-                //.Find(x => x.Document.ProcessResult.HasSucceeded == false);
+            }
+        }
+
+        public static IEnumerable<DocumentProcessingEvent> From(DateTime from)
+        {
+            using (var db = new LiteDatabase(dbFile.FullName))
+            {
+                return db
+                    .GetCollection<DocumentProcessingEvent>(collectionNameForDocProcessingEvents)
+                    .Include(x => x.User)
+                    .Find(x => x.Timestamp >= from);
             }
         }
     }
