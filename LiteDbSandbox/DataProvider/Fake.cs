@@ -28,7 +28,7 @@ namespace LiteDbSandbox.DataProvider
             document = new Faker<Document>()
                 .StrictMode(true)
                 .RuleFor(d => d.Name, f => f.System.FileName("pdf"))
-                .RuleFor(d => d.NumberOfPages, f => (int)f.Random.UInt(0, 300))
+                .RuleFor(d => d.NumberOfPages, f => f.Random.UInt(0, 300))
                 .RuleFor(d => d.ProcessResult, _ => etiResult.Generate())
                 .RuleFor(d => d.SizeInBytes, f => f.Random.UInt(0, 1024 * 1024 * 100));
         }

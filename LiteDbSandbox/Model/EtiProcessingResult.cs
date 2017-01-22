@@ -8,6 +8,6 @@ namespace LiteDbSandbox.Model
         public string ErrorMessage { get; set; }
         public string ErrorDetails { get; set; }
         public TimeSpan Duration { get; set; }
-        public int NumberOfTablesFound { get; set; }
+        public uint NumberOfTablesFound { get; set; }
     }
 }

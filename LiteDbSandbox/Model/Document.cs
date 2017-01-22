@@ -3,8 +3,8 @@
     public class Document
     {
         public string Name { get; set; }
-        public long SizeInBytes { get; set; }
-        public int NumberOfPages { get; set; }
+        public ulong SizeInBytes { get; set; }
+        public uint NumberOfPages { get; set; }
         public EtiProcessingResult ProcessResult { get; set; }
     }
 }
