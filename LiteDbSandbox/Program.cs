@@ -47,6 +47,8 @@ namespace LiteDbSandbox
                     .For(Fake.User)
                     .Pin(Fake.Document);
 
+                SQLiteStore.SQLiteStore.Pin(new DocumentProcessingEvent { Document = Fake.Document, Timestamp = DateTime.Now }, Fake.User);
+
                 Console.WriteLine($"Pinned new visit @ {DateTime.Now}");
 
                 timer.Interval = random.Next(1000, 10000);
